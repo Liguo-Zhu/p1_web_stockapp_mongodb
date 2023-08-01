@@ -1,6 +1,6 @@
 import React from "react";
 import AsyncSelect from "react-select/async";
-import options from "../api/Cities_names_searchset.json";
+import { options } from "../api/Cities_names";
 // --------------------------------------------------
 export default function SingleSelectedBar({ onSubmit }) {
   // --------------------------------------------------
@@ -9,6 +9,7 @@ export default function SingleSelectedBar({ onSubmit }) {
       onSubmit(e.CityName); //(1) return the city's name which is matched
     }
   };
+
   const loadOptions = (searValue, Callback) => {
     setTimeout(() => {
       const filteredOptions = options.filter(

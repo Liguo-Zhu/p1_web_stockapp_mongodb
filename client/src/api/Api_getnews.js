@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 //Use Alpha Vantage API to get some stock news
 //----------------------------------------------------------------------------
 async function getNews() {
-  //const API_KEY = "OXFQ6GI7OTBXSEFY";
   const url = `https://www.alphavantage.co/query?function=NEWS_SENTIMENT&sort=LATEST&apikey=${process.env.REACT_APP_AlphaVantageAPIKEY}`;
   let res = await fetch(url);
   let data = await res.json();

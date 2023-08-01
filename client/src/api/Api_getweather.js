@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 
 //Use OpenWeather API to get the current weather, searching by city name
 async function getWeather(search) {
-  //const API_KEY = "1ec67ea74c1632d1556649b8d27e3797";
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${search}&appid=${process.env.REACT_APP_OpenWeatherMapAPIKEY}`;
   let res = await fetch(url);
   let data = await res.json();

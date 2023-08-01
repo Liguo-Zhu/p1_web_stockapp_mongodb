@@ -3,7 +3,10 @@ import Finnhub from "../api/Finnhub";
 import { useNavigate } from "react-router-dom";
 import { Table } from "reactstrap";
 import { useState, useEffect, useContext } from "react";
-import { AiFillCaretDown, AiFillCaretUp } from "react-icons/ai";
+import {
+  HiOutlineArrowNarrowDown,
+  HiOutlineArrowNarrowUp,
+} from "react-icons/hi";
 import { UserContext } from "../context/UserContext";
 
 export default function StockList() {
@@ -16,7 +19,7 @@ export default function StockList() {
   };
 
   const renderIcon = (i) => {
-    return i > 0 ? <AiFillCaretUp /> : <AiFillCaretDown />;
+    return i > 0 ? <HiOutlineArrowNarrowUp /> : <HiOutlineArrowNarrowDown />;
   };
 
   const handleSelectStock = (symbol) => {

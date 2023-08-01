@@ -1,4 +1,4 @@
-[
+export const options=[
   { "CityName": "Abidjan", "label": "Abidjan (Ivory Coast)" },
   { "CityName": "Abu Dhabi", "label": "Abu Dhabi (United Arab Emirates)" },
   { "CityName": "Abuja", "label": "Abuja (Nigeria)" },

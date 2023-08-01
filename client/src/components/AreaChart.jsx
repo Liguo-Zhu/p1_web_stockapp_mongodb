@@ -1,6 +1,7 @@
 import React from "react";
 import Chart from "react-apexcharts";
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 import StockData from "./StockData";
 
 export default function AreaChart({ chartData, symbol }) {
@@ -74,7 +75,10 @@ export default function AreaChart({ chartData, symbol }) {
 
   return (
     <div className="container my-5">
-      <h2>Stock Detail: {symbol}</h2>
+      <h2>Stock Detail: {symbol} </h2>
+      <NavLink to={"/stock"} className="nav-link ">
+        (Back to Stock)
+      </NavLink>
       <hr />
       <StockData symbol={symbol} />
       <div>

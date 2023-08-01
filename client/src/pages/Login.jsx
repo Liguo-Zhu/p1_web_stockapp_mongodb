@@ -21,8 +21,7 @@ export default function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const url = "http://localhost:8080/login";
-      const res = await axios.post(url, data);
+      const res = await axios.post(process.env.REACT_APP_LOGIN, data);
 
       if (res.data.error === false) {
         localStorage.setItem("@stockAppUser", JSON.stringify(res.data));
@@ -31,7 +30,6 @@ export default function Login() {
         } else {
         }
 
-        // nav("/");
         // window.location.reload();
         // window.location.assign("/");
         // window.location.replace("/");

@@ -21,8 +21,8 @@ export default function Signup() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const url = "http://localhost:8080/signup";
-      const res = await axios.post(url, data);
+      console.log(process.env.REACT_APP_SIGNUP);
+      const res = await axios.post(process.env.REACT_APP_SIGNUP, data);
 
       if (res.data.error === false) {
         setSuccess(true);

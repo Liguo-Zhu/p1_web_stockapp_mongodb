@@ -11,7 +11,7 @@ export default function Navigation({ currentUser }) {
 
   const updateData = async (username, watchlist) => {
     try {
-      await Finnhub.post("http://localhost:8080/update/watchlist", {
+      await Finnhub.post(process.env.REACT_APP_UPDATE_WATCHLIST, {
         username: username,
         watchlist: watchlist,
       });
@@ -29,7 +29,7 @@ export default function Navigation({ currentUser }) {
   return (
     <>
       <Navbar bg="dark" variant="dark" expand="md" className="sticky-top">
-        <Container fluid>
+        <Container fluid className="container">
           <Navbar.Brand className="navbar-brand">
             <img
               alt=""

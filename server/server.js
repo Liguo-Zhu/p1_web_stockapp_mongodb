@@ -57,6 +57,7 @@ app.get("/auth", authorize, (req, res) => {
 });
 //---register----------------------------------------------------
 app.post("/signup", async (req, res) => {
+  console.log("signup >>>>");
   const { username, email, password, watchlist } = req.body;
   if (!username || !password)
     return res.json({

@@ -55,7 +55,7 @@ export default function StockDetail() {
               symbol: symbolID,
               from: oneWeek,
               to: currentTime,
-              resolution: 60, //every 30 minutes
+              resolution: 60, //every 60 minutes
             },
           }),
           Finnhub.get("/stock/candle", {
@@ -63,10 +63,12 @@ export default function StockDetail() {
               symbol: symbolID,
               from: oneYear,
               to: currentTime,
-              resolution: "D", //every 30 minutes
+              resolution: "D", //every day
             },
           }),
         ]);
+
+        console.log(res[0]);
 
         if (isMounted) {
           //store data to the state
@@ -78,7 +80,7 @@ export default function StockDetail() {
           setIsLoading(false);
         }
       } catch (error) {
-        console.log(error.message);
+        // console.log(error.message);
         setIsLoading(false);
       }
     };
